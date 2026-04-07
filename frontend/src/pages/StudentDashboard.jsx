@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast';
 import { Calendar, Clock, BookOpen, Star, Search, Filter, Home, User, Bell, ChevronLeft, ChevronRight, LogOut, MessageSquare, Menu, Shield, X, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import NotificationBell from '../components/NotificationBell';
-
+import API_URL from "../services/api";
 const API = 'http://localhost:5000/api';
 
 // Star Rating Component
@@ -29,7 +29,7 @@ const TutorProfileModal = ({ tutor, onClose, onBook }) => {
   useEffect(() => {
     const fetchSlots = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/student/tutor/${tutor._id}/slots`, {
+        const res = await axios.get(`${API_URL}/api/student/tutor/${tutor._id}/slots`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         setSlots(res.data);

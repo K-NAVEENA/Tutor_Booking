@@ -10,7 +10,6 @@ import StudentDashboard from './pages/StudentDashboard';
 import TutorDashboard from './pages/TutorDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import Navbar from './components/Navbar';
-
 function App() {
   const [theme, setTheme] = useState('light');
 

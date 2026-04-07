@@ -9,8 +9,8 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import NotificationBell from '../components/NotificationBell';
-
-const API = 'http://localhost:5000/api';
+import API_URL from "../services/api";
+const API = `${API_URL}/api`;
 
 const ConfirmDialog = ({ message, onConfirm, onCancel }) => (
   <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">

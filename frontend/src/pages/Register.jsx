@@ -3,7 +3,7 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { GraduationCap, Mail, KeyRound, User, Phone, ArrowRight } from 'lucide-react';
-
+import API_URL from "../services/api";
 const ROLES = ['student', 'tutor'];
 
 const Register = () => {
@@ -18,7 +18,7 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/auth/register', formData);
+      await axios.post(`${API_URL}/api/auth/register`, formData);
       toast.success('Registration successful! Please login.');
       navigate('/login');
     } catch (err) {

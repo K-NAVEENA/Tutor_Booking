@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { GraduationCap, Mail, KeyRound, ArrowRight, BookOpen, Users, Star } from 'lucide-react';
-
+import API_URL from "../services/api";
 const ROLES = ['student', 'tutor', 'admin'];
 
 const Login = () => {
@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const res = await axios.post(`${API_URL}/api/auth/login`, formData);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       toast.success('Welcome back!');

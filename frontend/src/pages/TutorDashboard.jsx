@@ -4,8 +4,8 @@ import { toast } from 'react-hot-toast';
 import { BookOpen, Calendar, Settings, Clock, Users, X, Check, DollarSign, ArrowUpRight, Home, Star, MessageSquare, LogOut, Menu, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import NotificationBell from '../components/NotificationBell';
-
-const API = 'http://localhost:5000/api';
+import API_URL from "../services/api";
+const API = `${API_URL}/api`;
 
 const StarRating = ({ value, onChange }) => (
   <div className="flex gap-1">

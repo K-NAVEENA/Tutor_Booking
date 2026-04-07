@@ -6,7 +6,7 @@ import {
   BookOpen, CheckCircle2, Calendar, Star, ArrowRight,
   Search, Users, Shield, Send, MapPin, Phone, Mail
 } from 'lucide-react';
-
+import API_URL from "../services/api";
 // Mock tutor preview data (shown before login)
 const PREVIEW_TUTORS = [
   { name: 'Dr. Sarah Chen', subject: 'Advanced Mathematics', rating: 4.9, price: 55, exp: 8 },
@@ -44,7 +44,7 @@ const LandingPage = () => {
     e.preventDefault();
     setSending(true);
     try {
-      await axios.post('http://localhost:5000/api/contact', contactForm);
+      await axios.post(`${API_URL}/api/contact`, contactForm);
       toast.success('Message sent! Our admin will review it.');
       setContactForm({ name: '', email: '', message: '' });
     } catch (err) {
